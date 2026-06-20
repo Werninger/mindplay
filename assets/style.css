@@ -496,3 +496,190 @@ input[type="number"]:focus {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+/* ── Cross Sum page ─────────────────────────── */
+body.cs-page {
+  background: #f4f9f6;
+}
+
+[data-theme="dark"] body.cs-page {
+  background: #111a14;
+}
+
+.cs-main {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+}
+
+.cs-timer-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+
+.cs-timer {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cs-timer-icon {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.cs-timer-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.cs-new-btn {
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.cs-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.cs-tiles {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.cs-tile {
+  width: 34px;
+  height: 44px;
+  background: #ffffff;
+  border: 1.5px solid #c8ddd4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0F6E56;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .cs-tile {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--accent);
+}
+
+.cs-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.cs-answer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-input {
+  width: 70px;
+  height: 44px;
+  background: #ffffff;
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  outline: none;
+  -moz-appearance: textfield;
+  transition: border-color 0.15s;
+}
+
+.cs-input::-webkit-inner-spin-button,
+.cs-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+[data-theme="dark"] .cs-input {
+  background: var(--surface);
+}
+
+.cs-message {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.cs-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0;
+}
+
+.cs-scores {
+  list-style: none;
+  text-align: left;
+}
+
+.cs-score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.cs-score-row:last-child {
+  border-bottom: none;
+}
+
+.cs-score-rank {
+  font-weight: 700;
+  color: var(--accent);
+  width: 1.25rem;
+  flex-shrink: 0;
+}
+
+.cs-score-rank.gold {
+  color: #BA7517;
+}
+
+.cs-score-time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  flex: 1;
+}
+
+.cs-score-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.cs-scores-empty {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+  display: block;
+  padding: 0.5rem 0;
+}

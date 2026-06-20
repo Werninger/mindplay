@@ -49,7 +49,7 @@
     display.innerHTML = '';
     numbers.forEach(function (n) {
       var tile = document.createElement('div');
-      tile.className = 'number-tile';
+      tile.className = 'cs-tile';
       tile.textContent = n;
       display.appendChild(tile);
     });
@@ -77,8 +77,12 @@
 
   function saveScore(time) {
     var scores = JSON.parse(localStorage.getItem('mp-crosssum-scores') || '[]');
-    scores.push(time);
-    scores.sort(function (a, b) { return a - b; });
+    var now = new Date();
+    var dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    scores.push({ t: time, d: dateStr });
+    scores.sort(function (a, b) {
+      return (typeof a === 'number' ? a : a.t) - (typeof b === 'number' ? b : b.t);
+    });
     scores = scores.slice(0, 5);
     localStorage.setItem('mp-crosssum-scores', JSON.stringify(scores));
   }
@@ -88,12 +92,18 @@
     var list = document.getElementById('scores-list');
     list.innerHTML = '';
     if (scores.length === 0) {
-      list.innerHTML = '<li><span class="scores-empty">No scores yet — play a round!</span></li>';
+      list.innerHTML = '<li><span class="cs-scores-empty">No scores yet — play a round!</span></li>';
       return;
     }
     scores.forEach(function (s, i) {
+      var t = typeof s === 'number' ? s : s.t;
+      var d = s && s.d ? s.d : '';
       var li = document.createElement('li');
-      li.innerHTML = '<span class="score-rank">' + (i + 1) + '</span><span class="score-time">' + formatTime(s) + '</span>';
+      li.className = 'cs-score-row';
+      li.innerHTML =
+        '<span class="cs-score-rank' + (i === 0 ? ' gold' : '') + '">' + (i + 1) + '</span>' +
+        '<span class="cs-score-time">' + formatTime(t) + '</span>' +
+        (d ? '<span class="cs-score-date">' + d + '</span>' : '');
       list.appendChild(li);
     });
   }
@@ -108,11 +118,9 @@
     if (val === answer) {
       stopTimer();
       roundActive = false;
-      document.getElementById('answer-input').disabled = true;
-      document.getElementById('check-btn').disabled = true;
       saveScore(elapsed);
       renderScores();
-      showMessage('Correct! ' + formatTime(elapsed) + ' — press New for another round.', 'success');
+      newRound();
     } else {
       showMessage('Not quite — keep trying!', 'error');
       document.getElementById('answer-input').value = '';
