@@ -45,6 +45,5 @@ crosssum.js       crosssum game logic
 mastermind.js     mastermind game logic
 manifest.json     PWA manifest
 sw.js             service worker (offline support)
-icons/            PWA icons (192px, 512px)
-```
+icons/            PWA icons (192px, 512px)```
 
