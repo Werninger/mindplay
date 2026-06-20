@@ -12,9 +12,7 @@
   }
 
   function computeAnswer(nums) {
-    var sum = nums.reduce(function (acc, n) {
-      return acc + String(n).split('').reduce(function (a, d) { return a + parseInt(d, 10); }, 0);
-    }, 0);
+    var sum = nums.reduce(function (acc, n) { return acc + n; }, 0);
     return digitalRoot(sum);
   }
 
@@ -42,7 +40,7 @@
   function newRound() {
     numbers = [];
     for (var i = 0; i < 6; i++) {
-      numbers.push(Math.floor(Math.random() * 99) + 1);
+      numbers.push(Math.floor(Math.random() * 9) + 1);
     }
     answer = computeAnswer(numbers);
     roundActive = true;

@@ -6,7 +6,7 @@ A minimal, eye-friendly browser game platform. No frameworks, no build tools —
 
 ## Games
 
-### Crosssum
+### Cross Sum
 Calculate the [digital root](https://en.wikipedia.org/wiki/Digital_root) of six random numbers as fast as you can. The timer starts immediately and your top 5 times are saved locally.
 
 ### Mastermind

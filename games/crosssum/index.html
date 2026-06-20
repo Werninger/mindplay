@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crosssum — mindplay</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+  <title>Cross Sum — mindplay</title>
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <link rel="manifest" href="../../manifest.json" />
   <meta name="theme-color" content="#1D9E75" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
   <header>
     <div class="header-left">
-      <button class="back-btn" onclick="location.href='index.html'" aria-label="Back">&#8592;</button>
-      <a href="index.html" class="logo">mindplay</a>
+      <button class="back-btn" onclick="location.href='../../index.html'" aria-label="Back">&#8592;</button>
+      <a href="../../index.html" class="logo">mindplay</a>
     </div>
     <div class="header-right">
       <button class="icon-btn" id="hint-btn" aria-label="Hint">💡</button>
@@ -22,7 +22,7 @@
   </header>
   <main>
     <div id="hint-panel" class="hint-panel">
-      <strong>How to play:</strong> Sum up all the digits of all six numbers.
+      <strong>How to play:</strong> Sum all six numbers.
       If the result has more than one digit, sum its digits again.
       Repeat until you have a single digit — that's the <strong>digital root</strong>.
       <br /><br />
@@ -52,7 +52,7 @@
       <ul class="scores-list" id="scores-list"></ul>
     </div>
   </main>
-  <script src="app.js"></script>
-  <script src="crosssum.js"></script>
+  <script src="../../assets/app.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>

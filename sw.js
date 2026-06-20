@@ -1,16 +1,18 @@
-var CACHE = 'mindplay-v1';
+var CACHE = 'mindplay-v2';
 var FILES = [
   './',
   './index.html',
-  './crosssum.html',
-  './mastermind.html',
-  './style.css',
-  './app.js',
-  './crosssum.js',
-  './mastermind.js',
   './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './assets/style.css',
+  './assets/app.js',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
+  './games/crosssum/',
+  './games/crosssum/index.html',
+  './games/crosssum/game.js',
+  './games/mastermind/',
+  './games/mastermind/index.html',
+  './games/mastermind/game.js'
 ];
 
 self.addEventListener('install', function (e) {

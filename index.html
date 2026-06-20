@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mindplay</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/style.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#1D9E75" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="mindplay" />
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
 </head>
 <body>
   <header>
@@ -27,17 +27,17 @@
       <p>Minimal browser games, offline-ready</p>
     </div>
     <div class="game-grid">
-      <a href="crosssum.html" class="game-card">
-        <h2>Crosssum</h2>
+      <a href="games/crosssum/" class="game-card">
+        <h2>Cross Sum</h2>
         <p>Calculate the digital root of six random numbers. How fast can you do it?</p>
       </a>
-      <a href="mastermind.html" class="game-card">
+      <a href="games/mastermind/" class="game-card">
         <h2>Mastermind</h2>
         <p>Crack the secret 4-color code using color and position clues. 10 attempts.</p>
       </a>
     </div>
   </main>
-  <script src="app.js"></script>
+  <script src="assets/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
