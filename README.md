@@ -47,3 +47,4 @@ manifest.json     PWA manifest
 sw.js             service worker (offline support)
 icons/            PWA icons (192px, 512px)
 ```
+
