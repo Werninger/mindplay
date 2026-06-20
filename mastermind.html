@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastermind — mindplay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1D9E75" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <button class="back-btn" onclick="location.href='index.html'" aria-label="Back">&#8592;</button>
+      <a href="index.html" class="logo">mindplay</a>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="hint-btn" aria-label="Hint">💡</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main>
+    <div id="hint-panel" class="hint-panel">
+      <strong>How to play:</strong> Crack the secret 4-color code in up to 10 guesses.
+      <br /><br />
+      After each guess you get feedback dots:
+      <br />
+      <strong>Filled (dark)</strong> = right color, right position.<br />
+      <strong>Ring (outlined)</strong> = right color, wrong position.<br />
+      No dot = that color isn't in the code.
+      <br /><br />
+      Tap a color in the palette, then tap the slot you want to fill. Submit when all 4 slots are filled.
+    </div>
+
+    <div class="game-section">
+      <h2>Current guess</h2>
+      <div class="current-guess-display" id="current-guess"></div>
+      <div class="color-palette" id="color-palette"></div>
+      <div style="display:flex;gap:0.75rem;margin-top:1rem;align-items:center;">
+        <button class="btn" id="submit-btn" disabled>Submit</button>
+        <button class="btn btn-secondary" id="clear-btn">Clear</button>
+        <button class="btn btn-secondary" id="new-game-btn" style="margin-left:auto;">New game</button>
+      </div>
+      <div id="message" class="message"></div>
+    </div>
+
+    <div class="game-section">
+      <h2>Attempts</h2>
+      <div id="history"></div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script src="mastermind.js"></script>
+</body>
+</html>

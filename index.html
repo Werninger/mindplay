@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mindplay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1D9E75" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="mindplay" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="logo">mindplay</span>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main>
+    <div class="home-title">
+      <h1>mindplay</h1>
+      <p>Minimal browser games, offline-ready</p>
+    </div>
+    <div class="game-grid">
+      <a href="crosssum.html" class="game-card">
+        <h2>Crosssum</h2>
+        <p>Calculate the digital root of six random numbers. How fast can you do it?</p>
+      </a>
+      <a href="mastermind.html" class="game-card">
+        <h2>Mastermind</h2>
+        <p>Crack the secret 4-color code using color and position clues. 10 attempts.</p>
+      </a>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>

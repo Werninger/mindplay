@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crosssum — mindplay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1D9E75" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <button class="back-btn" onclick="location.href='index.html'" aria-label="Back">&#8592;</button>
+      <a href="index.html" class="logo">mindplay</a>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="hint-btn" aria-label="Hint">💡</button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+  <main>
+    <div id="hint-panel" class="hint-panel">
+      <strong>How to play:</strong> Sum up all the digits of all six numbers.
+      If the result has more than one digit, sum its digits again.
+      Repeat until you have a single digit — that's the <strong>digital root</strong>.
+      <br /><br />
+      Example: 4, 3, 6, 9, 1, 2 → 4+3+6+9+1+2 = 25 → 2+5 = <strong>7</strong>
+    </div>
+
+    <div class="game-section">
+      <h2>Numbers</h2>
+      <div class="number-tiles" id="numbers-display"></div>
+      <div style="margin-top:1rem; display:flex; align-items:center; gap:1rem;">
+        <div class="timer" id="timer">0:00</div>
+        <button class="btn btn-secondary" id="new-btn" style="margin-left:auto;">New</button>
+      </div>
+    </div>
+
+    <div class="game-section">
+      <h2>Your answer</h2>
+      <div class="input-row">
+        <input type="number" id="answer-input" min="1" max="9" placeholder="1–9" />
+        <button class="btn" id="check-btn">Check</button>
+      </div>
+      <div id="message" class="message"></div>
+    </div>
+
+    <div class="game-section">
+      <h2>Top 5 times</h2>
+      <ul class="scores-list" id="scores-list"></ul>
+    </div>
+  </main>
+  <script src="app.js"></script>
+  <script src="crosssum.js"></script>
+</body>
+</html>
